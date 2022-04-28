@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        {% for user in users %}
+        <div class="col">
+            <div class="card" style="width:300px">
+                <img class="card-img-top"
+                    src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+                    alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">{{ user.username }}</h4>
+                    <p class="card-text">Bekerja di bla bla bla selama 5 tahun</p>
+                    <a href="{{url_for('user_profile', username=user.username)}}" class="btn btn-primary">See
+                        Profile</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

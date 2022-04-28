@@ -1,0 +1,19 @@
+<center>
+    {% extends "layout.html" %}
+</center>
+{% block body %}
+<center>
+    <h2>Status Baru</h2>
+
+    <div class="container-post">
+        <form action="{{url_for('create')}}" method="post">
+            <textarea name="content" cols="150" rows="10"></textarea>
+            <!-- <center><input type="submit" value="Add Post"> -->
+            <center>
+            <button type="submit" class="btn btn-primary add-post">Add Post</button>
+            </center>
+        </form>
+    </div>
+</center>
+
+{% endblock %}

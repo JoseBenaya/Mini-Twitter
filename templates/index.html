@@ -1,0 +1,23 @@
+<center>
+    {% extends "layout.html" %}
+</center>
+{% block body %}
+
+<h2>Homepage</h2>
+
+{% for id, username, content, date in get_data %}
+
+<div class="card">
+    <h5 class="card-header">{{date}}</h5>
+    <div class="card-body">
+        <h5 class="card-title"><a href="{{url_for('user_profile', username=username)}}" class='user'>{{ username }}</a>
+        </h5>
+        <p class="card-text">{{content}}</p>
+        <a href="#" class="btn btn-primary">Like</a>
+    </div>
+</div>
+<br>
+
+{% endfor %}
+
+{% endblock %}
